@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+        <string>ResQLink</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>ResQLink needs access to your camera to capture photos and videos for emergency communication.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>ResQLink needs access to your photo library to attach images to emergency messages.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>ResQLink needs permission to save photos and videos you capture.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>ResQLink needs your location to share your position with emergency contacts and help coordinate rescue efforts.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>ResQLink needs continuous location access to track your journey and automatically send location updates during emergencies, even when the app is in the background.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>ResQLink needs always-on location access to provide emergency location tracking and automatic SOS alerts when needed.</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>ResQLink uses Bluetooth to create peer-to-peer mesh networks for off-grid emergency communication.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>ResQLink uses Bluetooth to discover and connect with nearby devices for emergency messaging.</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>ResQLink needs local network access to communicate with nearby devices using peer-to-peer mesh networking.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+		<string>bluetooth-central</string>
+		<string>bluetooth-peripheral</string>
+	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<false/>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

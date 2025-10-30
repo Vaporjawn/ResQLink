@@ -1,0 +1,21 @@
+.network-status {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.priority-badge {
+  margin-left: 8px;
+}
+
+.message-input-container {
+  position: sticky;
+  bottom: 0;
+  background: var(--ion-background-color);
+  border-top: 1px solid var(--ion-border-color);
+  z-index: 10;
+}
+
+ion-content {
+  --padding-bottom: 80px;
+}

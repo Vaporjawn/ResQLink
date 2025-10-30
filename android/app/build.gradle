@@ -1,0 +1,88 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace "com.resqlink.mesh"
+    compileSdk rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "com.resqlink.mesh"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        aaptOptions {
+             // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
+             // Default: https://android.googlesource.com/platform/frameworks/base/+/282e181b58cf72b6ca770dc7ca5f91f135444502/tools/aapt/AaptAssets.cpp#61
+            ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
+        }
+    }
+
+    // Signing configurations
+    signingConfigs {
+        release {
+            // Read signing credentials from local.properties or environment variables
+            // This prevents committing sensitive credentials to version control
+            if (project.hasProperty('RESQLINK_RELEASE_STORE_FILE')) {
+                storeFile file(RESQLINK_RELEASE_STORE_FILE)
+                storePassword RESQLINK_RELEASE_STORE_PASSWORD
+                keyAlias RESQLINK_RELEASE_KEY_ALIAS
+                keyPassword RESQLINK_RELEASE_KEY_PASSWORD
+            } else {
+                // Fallback to debug signing if release credentials not configured
+                // This allows builds to succeed without blocking development
+                logger.warn("Release signing not configured. Using debug signing.")
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            // Default debug configuration
+            minifyEnabled false
+            debuggable true
+        }
+        release {
+            // Enable code shrinking and obfuscation for release builds
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            // Apply release signing configuration if available
+            if (project.hasProperty('RESQLINK_RELEASE_STORE_FILE')) {
+                signingConfig signingConfigs.release
+            } else {
+                // Use debug signing as fallback
+                signingConfig signingConfigs.debug
+            }
+        }
+    }
+}
+
+repositories {
+    flatDir{
+        dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
+    implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"
+    implementation "androidx.core:core-splashscreen:$coreSplashScreenVersion"
+    implementation project(':capacitor-android')
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
+    implementation project(':capacitor-cordova-android-plugins')
+}
+
+apply from: 'capacitor.build.gradle'
+
+try {
+    def servicesJSON = file('google-services.json')
+    if (servicesJSON.text) {
+        apply plugin: 'com.google.gms.google-services'
+    }
+} catch(Exception e) {
+    logger.info("google-services.json not found, google-services plugin not applied. Push Notifications won't work")
+}

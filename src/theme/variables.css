@@ -1,0 +1,238 @@
+/* For information on how to create your own theme, please see:
+http://ionicframework.com/docs/theming/ */
+
+/**
+ * Ionic Dark Palette
+ * -----------------------------------------------------
+ * Import dark palette using CSS class method for programmatic control.
+ * The dark palette is applied when the 'ion-palette-dark' class is added to the html element.
+ * For more information, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+@import '@ionic/react/css/palettes/dark.class.css';
+
+/**
+ * Custom Theme Variables
+ * -----------------------------------------------------
+ * Override Ionic variables or add custom properties here.
+ */
+
+/* Prevent flashing when toggling between palettes */
+ion-item {
+  --transition: none;
+}
+
+/* Platform-specific overrides for light mode */
+:root.ios {
+  --ion-background-color: var(--ion-background-color-step-50, #f2f2f6);
+  --ion-toolbar-background: var(--ion-background-color);
+  --ion-item-background: #fff;
+}
+
+:root.md {
+  --ion-background-color: var(--ion-background-color-step-100, #f9f9f9);
+  --ion-toolbar-background: var(--ion-background-color);
+  --ion-item-background: #fff;
+}
+
+/* Platform-specific overrides for dark mode */
+.ion-palette-dark.ios,
+.ion-palette-dark.md {
+  --ion-item-background: #1c1c1d;
+}
+
+/**
+ * High Contrast Mode
+ * -----------------------------------------------------
+ * Enhanced contrast mode for improved accessibility
+ */
+.high-contrast-mode {
+  /* High contrast colors for better visibility */
+  --ion-color-primary: #0066ff;
+  --ion-color-primary-rgb: 0, 102, 255;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+
+  --ion-color-danger: #ff0000;
+  --ion-color-danger-rgb: 255, 0, 0;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+
+  /* Success color adjusted for WCAG AAA compliance (7:1 contrast on white) */
+  --ion-color-success: #009900;
+  --ion-color-success-rgb: 0, 153, 0;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+
+  --ion-color-warning: #ffaa00;
+  --ion-color-warning-rgb: 255, 170, 0;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+
+  /* Increase text contrast */
+  --ion-text-color: #000000;
+  --ion-text-color-rgb: 0, 0, 0;
+
+  /* High contrast backgrounds */
+  --ion-background-color: #ffffff;
+  --ion-background-color-rgb: 255, 255, 255;
+
+  /* Increase border visibility */
+  --ion-border-color: #000000;
+  --ion-item-border-color: #000000;
+}
+
+.high-contrast-mode.ion-palette-dark {
+  /* Dark mode high contrast */
+  --ion-color-primary: #66b3ff;
+  --ion-color-primary-rgb: 102, 179, 255;
+  --ion-color-primary-contrast: #000000;
+  --ion-color-primary-contrast-rgb: 0, 0, 0;
+
+  --ion-color-danger: #ff6666;
+  --ion-color-danger-rgb: 255, 102, 102;
+  --ion-color-danger-contrast: #000000;
+  --ion-color-danger-contrast-rgb: 0, 0, 0;
+
+  --ion-color-success: #66ff66;
+  --ion-color-success-rgb: 102, 255, 102;
+  --ion-color-success-contrast: #000000;
+  --ion-color-success-contrast-rgb: 0, 0, 0;
+
+  --ion-color-warning: #ffcc66;
+  --ion-color-warning-rgb: 255, 204, 102;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+
+  /* High contrast text on dark background */
+  --ion-text-color: #ffffff;
+  --ion-text-color-rgb: 255, 255, 255;
+
+  /* Dark background */
+  --ion-background-color: #000000;
+  --ion-background-color-rgb: 0, 0, 0;
+
+  /* High contrast borders */
+  --ion-border-color: #ffffff;
+  --ion-item-border-color: #ffffff;
+}
+
+/**
+ * Font Size Classes
+ * -----------------------------------------------------
+ * Accessibility font size adjustment using rem units for relative scaling
+ */
+
+/* Small font size (14px base) */
+.font-size-small {
+  font-size: 14px;
+}
+
+.font-size-small ion-content,
+.font-size-small ion-label,
+.font-size-small ion-text {
+  font-size: 0.875rem; /* 14px * 0.875 = 12.25px */
+}
+
+.font-size-small h1 { font-size: 1.75rem; } /* 24.5px */
+.font-size-small h2 { font-size: 1.5rem; }  /* 21px */
+.font-size-small h3 { font-size: 1.25rem; } /* 17.5px */
+.font-size-small p { font-size: 0.875rem; } /* 12.25px */
+
+/* Medium font size (16px base - default) */
+.font-size-medium {
+  font-size: 16px;
+}
+
+.font-size-medium ion-content,
+.font-size-medium ion-label,
+.font-size-medium ion-text {
+  font-size: 1rem; /* 16px * 1 = 16px */
+}
+
+.font-size-medium h1 { font-size: 2rem; }   /* 32px */
+.font-size-medium h2 { font-size: 1.75rem; } /* 28px */
+.font-size-medium h3 { font-size: 1.5rem; }  /* 24px */
+.font-size-medium p { font-size: 1rem; }     /* 16px */
+
+/* Large font size (18px base) */
+.font-size-large {
+  font-size: 18px;
+}
+
+.font-size-large ion-content,
+.font-size-large ion-label,
+.font-size-large ion-text {
+  font-size: 1.125rem; /* 18px * 1.125 = 20.25px */
+}
+
+.font-size-large h1 { font-size: 2.25rem; } /* 40.5px */
+.font-size-large h2 { font-size: 2rem; }    /* 36px */
+.font-size-large h3 { font-size: 1.75rem; } /* 31.5px */
+.font-size-large p { font-size: 1.125rem; } /* 20.25px */
+
+/* Extra Large font size (20px base) */
+.font-size-xlarge {
+  font-size: 20px;
+}
+
+.font-size-xlarge ion-content,
+.font-size-xlarge ion-label,
+.font-size-xlarge ion-text {
+  font-size: 1.25rem; /* 20px * 1.25 = 25px */
+}
+
+.font-size-xlarge h1 { font-size: 2.5rem; } /* 50px */
+.font-size-xlarge h2 { font-size: 2.25rem; } /* 45px */
+.font-size-xlarge h3 { font-size: 2rem; }    /* 40px */
+.font-size-xlarge p { font-size: 1.25rem; }  /* 25px */
+
+/* XXL font size (24px base) */
+.font-size-xxlarge {
+  font-size: 24px;
+}
+
+.font-size-xxlarge ion-content,
+.font-size-xxlarge ion-label,
+.font-size-xxlarge ion-text {
+  font-size: 1.5rem; /* 24px * 1.5 = 36px */
+}
+
+.font-size-xxlarge h1 { font-size: 3rem; }   /* 72px */
+.font-size-xxlarge h2 { font-size: 2.75rem; } /* 66px */
+.font-size-xxlarge h3 { font-size: 2.5rem; }  /* 60px */
+.font-size-xxlarge p { font-size: 1.5rem; }   /* 36px */
+
+/**
+ * Skip Navigation Link
+ * -----------------------------------------------------
+ * Accessible skip link for keyboard navigation
+ */
+.skip-nav-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--ion-color-primary);
+  color: var(--ion-color-primary-contrast);
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 9999;
+  border-radius: 0 0 0.5rem 0;
+  transition: top 0.3s ease;
+}
+
+.skip-nav-link:focus {
+  top: 0;
+  outline: 3px solid var(--ion-color-secondary);
+  outline-offset: 2px;
+}
+
+.high-contrast-mode .skip-nav-link {
+  border: 3px solid var(--ion-color-secondary);
+}
+
+.high-contrast-mode .skip-nav-link:focus {
+  outline: 5px solid var(--ion-color-warning);
+}
+

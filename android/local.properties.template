@@ -1,0 +1,17 @@
+# Android SDK Location
+# Update this path to match your system's Android SDK installation
+sdk.dir=/Users/YOUR_USERNAME/Library/Android/sdk
+
+# Release Signing Configuration
+# Uncomment and configure these values after creating your release keystore
+# IMPORTANT: Never commit this file with real credentials to version control
+
+# RESQLINK_RELEASE_STORE_FILE=keystores/resqlink-release.keystore
+# RESQLINK_RELEASE_STORE_PASSWORD=YOUR_KEYSTORE_PASSWORD
+# RESQLINK_RELEASE_KEY_ALIAS=resqlink
+# RESQLINK_RELEASE_KEY_PASSWORD=YOUR_KEY_PASSWORD
+
+# Instructions:
+# 1. Create a release keystore using the command in RELEASE_NOTES.md
+# 2. Uncomment the lines above and replace the placeholder values
+# 3. Keep this file secure and never commit actual credentials

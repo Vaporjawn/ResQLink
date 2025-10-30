@@ -1,0 +1,33 @@
+/**
+ * SettingsPage Styles
+ */
+
+.settings-footer {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.settings-footer p {
+  margin: 0.5rem 0;
+}
+
+/* High contrast mode adjustments for settings page */
+.high-contrast-mode ion-list {
+  background: var(--ion-background-color);
+}
+
+.high-contrast-mode ion-item {
+  border: 2px solid var(--ion-border-color);
+  margin-bottom: 4px;
+}
+
+.high-contrast-mode ion-list-header {
+  border-bottom: 3px solid var(--ion-border-color);
+  background: var(--ion-background-color);
+}
+
+.high-contrast-mode ion-select,
+.high-contrast-mode ion-toggle,
+.high-contrast-mode ion-input {
+  border: 2px solid var(--ion-border-color);
+}
